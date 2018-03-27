@@ -1,0 +1,12 @@
+<suite name="Тест проверяет корректность работы модуля парсер">
+    <test name="Тест загружает валидный файл в директорию для парсинга и проверяет его на корректность">
+        <classes>
+            <class name="test_suite.test_parsing_functionality.TestParsingFile">
+                <parameter name="pathToDirectoryWithValidFile"
+                           value="C:\WorkingDirectory\testParser\ParserTest\src\test\resources\files\ymlFile\valid"/>;
+                <parameter name="pathToDirectoryExpectFile"
+                           value="C:\WorkingDirectory\testParser\ParserTest\src\test\resources\files\expectedFile"/>
+            </class>
+        </classes>
+    </test>
+</suite>

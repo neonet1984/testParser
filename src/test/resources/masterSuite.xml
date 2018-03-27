@@ -1,0 +1,14 @@
+<suite name="masterSuite" parallel="false">
+    <parameter name="directoryOutput" value="C:\Users\yauheni.hanchar\Desktop\test\directory_output"/>
+    <parameter name="directoryErrors" value="C:\Users\yauheni.hanchar\Desktop\test\directory_error"/>
+    <parameter name="directorySuccessFiles"
+               value="C:\Users\yauheni.hanchar\Desktop\test\directory_success"/>
+    <parameter name="directorySourceFiles"
+               value="C:\Users\yauheni.hanchar\Desktop\test\directory_input"/>
+
+    <suite-files>
+        <suite-file path="testMoveFile.xml"/>
+        <!--<suite-file path="testParsingFunctionality.xml"/>-->
+        <!--<suite-file path="testCreatingDirectoriesFromConfig.xml"/>-->
+    </suite-files>
+</suite>

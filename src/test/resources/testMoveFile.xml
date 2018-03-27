@@ -1,0 +1,15 @@
+<suite name="Тестирование механизма перемещения файлов" verbose="1">
+    <test name="Тест копирует в директорию валидные и не валидные ямл файлы и проверяет, верность их перемещения">
+        <!--https://testrail.billing.ru/testrail/index.php?/cases/view/4839035-->
+        <classes>
+            <class name="test_suite.moving_the_file_between_directories.TestValidFile">
+                <parameter name="pathToYmlFile"
+                           value="C:\WorkingDirectory\testParser\ParserTest\src\test\resources\files\yml_file\valid\gus.yml"/>
+            </class>
+            <class name="test_suite.moving_the_file_between_directories.TestNotValidFile">
+                <parameter name="pathToYmlFile"
+                           value="C:\WorkingDirectory\testParser\ParserTest\src\test\resources\files\yml_file\not_valid\not_valid_gus.yml"/>
+            </class>
+        </classes>
+    </test>
+</suite>
