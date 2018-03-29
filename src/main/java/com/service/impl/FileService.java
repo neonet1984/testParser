@@ -2,6 +2,8 @@ package com.service.impl;
 
 import com.service.IFile;
 import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,12 +13,14 @@ import java.util.Arrays;
  * Класс преднозначен для работы с файлами
  */
 public class FileService implements IFile {
+    private Logger log = LoggerFactory.getLogger(FileService.class);
+
     @Override
     public void copyFile(String pathFile, String pathDirectory) {
         try {
             FileUtils.copyFileToDirectory(new File(pathFile), new File(pathDirectory));
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(pathFile, e.getMessage());
         }
     }
 

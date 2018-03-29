@@ -1,9 +1,8 @@
-<suite name="Тест проверяет, правильно ли создались, директории исходя из app.properties ">
-    <test name="Тест читает app.properties парсера, и праверяет верность созданных директорий">
+<suite name="Тест проверяет, правильно ли создались, директории исходя из .properties парсера ">
+    <test name="Тест читает .properties парсера, и праверяет верность созданных директорий">
         <classes>
+            <class name="test_suite.PathSet"/>
             <class name="test_suite.test_creating_directories_from_config.TestCreatingDirectories">
-                <parameter name = "pathToRootDirectoryWithParser"
-                          value="C:\Users\yauheni.hanchar\Desktop\test"/>
             </class>
         </classes>
     </test>
