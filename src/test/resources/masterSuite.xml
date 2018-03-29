@@ -1,0 +1,15 @@
+<suite name="masterSuite" parallel="false">
+    <parameter name="rootPathToParser" value="C:\Users\yauheni.hanchar\Desktop\test"/>
+    <parameter name="namePropertiesFileParser" value="app.properties"/>
+    <parameter name="pathToNotValidYmlFile"
+               value="\src\test\resources\files\yml_file\not_valid\"/>
+    <parameter name="pathToValidYmlFile"
+               value="\src\test\resources\files\yml_file\valid\"/>
+    <parameter name="pathToDirectoryExpectFile"
+               value="\src\test\resources\files\expected_file"/>
+    <suite-files>
+        <suite-file path="testMoveFile.xml"/>
+        <!--<suite-file path="testParsingFunctionality.xml"/>-->
+        <!--<suite-file path="testCreatingDirectoriesFromConfig.xml"/>-->
+    </suite-files>
+</suite>

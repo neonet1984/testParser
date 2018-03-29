@@ -1,0 +1,6 @@
+target/*
+ParserTest.iml
+.idea
+src/test/resources/expected_file/gus.properties
+src/test/resources/yml_file/not_valid/not_valid_gus.properties
+src/test/resources/yml_file/valid/gus.yaml

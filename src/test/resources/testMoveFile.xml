@@ -1,0 +1,10 @@
+<suite name="Тестирование механизма перемещения файлов" verbose="1">
+    <test name="Тест копирует в директорию валидные и не валидные ямл файлы и проверяет, верность их перемещения">
+        <classes>
+            <class name="test_suite.PathSet"/>
+            <class name="test_suite.moving_the_file_between_directories.TestValidFile"/>
+            <class name="test_suite.moving_the_file_between_directories.TestNotValidFile"/>
+        </classes>
+    </test>
+</suite>
+
