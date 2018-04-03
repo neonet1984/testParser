@@ -1,0 +1,11 @@
+<suite name="Остановка парсера">
+    <test name="Остановка парсера">
+        <classes>
+            <class name="utils.UtilsParser">
+                <methods>
+                    <include name="stopParser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

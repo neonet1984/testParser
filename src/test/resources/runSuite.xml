@@ -1,5 +1,17 @@
 <suite name="runSuite" parallel="false">
+    <parameter name="directory_source"
+               value="c:\Users\yauheni.hanchar\Desktop\test\app\input_directory"/>
+    <parameter name="directory_output"
+               value="c:\Users\yauheni.hanchar\Desktop\test\app\directory_output"/>
+    <parameter name="directory_error"
+               value="c:\Users\yauheni.hanchar\Desktop\test\app\directory_error"/>
+    <parameter name="directory_success"
+               value="c:\Users\yauheni.hanchar\Desktop\test\app\directory_success"/>
+    <parameter name="rootPathToParser" value="c:\Users\yauheni.hanchar\Desktop\test\app"/>
     <suite-files>
+        <suite-file path="initDirs.xml"/>
+        <suite-file path="startupParser.xml"/>
         <suite-file path="masterSuite.xml"/>
+        <suite-file path="stopParser.xml"/>
     </suite-files>
 </suite>

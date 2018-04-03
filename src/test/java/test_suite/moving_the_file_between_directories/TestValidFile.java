@@ -1,14 +1,16 @@
 package test_suite.moving_the_file_between_directories;
 
 import org.testng.annotations.*;
-import test_suite.KeyUsedInPropertiesParser;
+import test_suite.ClearDirectory;
+import test_suite.PathsToDirectories;
+import utils.UtilsFile;
 
 import static org.testng.Assert.assertTrue;
 
 /**
  * Класс проверяет верность перемещения валидного ямл файла
  */
-public class TestValidFile extends Moving {
+public class TestValidFile extends ClearDirectory {
     private String pathToValidYmlFile;
 
     @BeforeClass
@@ -20,7 +22,7 @@ public class TestValidFile extends Moving {
     @DataProvider(name = "namesValidFiles")
     private Object[][] getNameValidYmlFiles() {
         return new Object[][]{
-                {"gus.yml"},
+                //   {"gus.yml"},
                 {"people.yml"}
         };
     }
@@ -32,12 +34,12 @@ public class TestValidFile extends Moving {
      *
      * @param nameValidFiles
      */
-    @Test(dataProvider = "namesValidFiles")
+    @Test(timeOut = 15000, dataProvider = "namesValidFiles")
     public void testMoveDirectory(String nameValidFiles) {
-        copyYmlFileToSourceDirectory(pathToValidYmlFile + nameValidFiles);
-        boolean isYmlFileInDirectorySuccess = isExistsFileInDirectory(System.getProperty(KeyUsedInPropertiesParser.DIRECTORY_SUCCESS));
+        UtilsFile.copyYmlFileToSourceDirectory(pathToValidYmlFile + "\\" + nameValidFiles);
+        boolean isYmlFileInDirectorySuccess = UtilsFile.isExistsFileInDirectory(PathsToDirectories.DIRECTORY_SUCCESS);
         assertTrue(isYmlFileInDirectorySuccess);
-        boolean isPropertiesFileInDirectoryOutput = isExistsFileInDirectory(System.getProperty(KeyUsedInPropertiesParser.DIRECTORY_OUTPUT));
+        boolean isPropertiesFileInDirectoryOutput = UtilsFile.isExistsFileInDirectory(PathsToDirectories.DIRECTORY_OUTPUT);
         assertTrue(isPropertiesFileInDirectoryOutput);
     }
 }

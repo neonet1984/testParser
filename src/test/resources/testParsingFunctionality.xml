@@ -1,7 +1,6 @@
 <suite name="Тест проверяет корректность работы модуля парсер">
     <test name="Тест загружает валидный файл в директорию для парсинга и проверяет его на корректность">
         <classes>
-            <class name="test_suite.PathSet"/>
             <class name="test_suite.test_parsing_functionality.TestParsingFile">
             </class>
         </classes>

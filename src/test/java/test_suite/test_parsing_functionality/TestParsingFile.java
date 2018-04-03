@@ -5,8 +5,9 @@ import com.service.IReader;
 import com.service.impl.FileService;
 import com.service.impl.ReaderService;
 import org.testng.annotations.*;
-import test_suite.KeyUsedInPropertiesParser;
-import test_suite.moving_the_file_between_directories.DirectoryCleaner;
+import test_suite.PathsToDirectories;
+import test_suite.ClearDirectory;
+import utils.UtilsFile;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ import static org.testng.Assert.assertEquals;
 /**
  * Тест проверяет валидность содержание конвертированного ямл файла
  */
-public class TestParsingFile extends DirectoryCleaner {
+public class TestParsingFile extends ClearDirectory {
     private static String PATH_TO_VALID_YML_FILE;
     private static String PATH_TO_DIRECTORY_EXPECT_FILE;
     private IReader readerService = new ReaderService();
@@ -25,7 +26,7 @@ public class TestParsingFile extends DirectoryCleaner {
     private static Object[][] credentials() {
         return new Object[][]{
                 {"people.yml", "people.properties"},
-                {"not_valid_people.yml", "people.properties"}
+                // {"not_valid_people.yml", "people.properties"}
         };
     }
 
@@ -50,11 +51,11 @@ public class TestParsingFile extends DirectoryCleaner {
      */
     @Test(dataProvider = "Data")
     public void testForCorrectConversion(String nameYmlFile, String namePropertiesFile) throws InterruptedException, IOException {
-        copyYmlFileToSourceDirectory(PATH_TO_VALID_YML_FILE + nameYmlFile);
+        UtilsFile.copyYmlFileToSourceDirectory(PATH_TO_VALID_YML_FILE + "\\" + nameYmlFile);
         Thread.sleep(4000);
-        String pathFile = fileService.getFileName(System.getProperty(KeyUsedInPropertiesParser.DIRECTORY_OUTPUT));
+        String pathFile = fileService.getFileName(PathsToDirectories.DIRECTORY_OUTPUT);
         String actualData = readerService.readFileToString(pathFile);
-        String expectData = readerService.readFileToString(PATH_TO_DIRECTORY_EXPECT_FILE + "\\" + namePropertiesFile);
+        String expectData = readerService.readFileToString(PATH_TO_DIRECTORY_EXPECT_FILE + "\\" + namePropertiesFile).replace("\r\n","\n");
         assertEquals(actualData, expectData);
     }
 }

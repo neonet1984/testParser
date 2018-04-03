@@ -14,12 +14,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
 /**
  * Класс преднозначен для чтения файлов
  */
 public class ReaderService implements IReader {
     private static final Logger log = LoggerFactory.getLogger(ReaderService.class);
+
     @Override
     public String readFileToString(String pathToFile) throws IOException {
         return FileUtils.readFileToString(new File(pathToFile));
@@ -31,7 +31,7 @@ public class ReaderService implements IReader {
             return stream
                     .collect(Collectors.toList());
         } catch (IOException e) {
-            log.error("Ошибка чтения файла",e.getMessage());
+            log.error("Ошибка чтения файла", e.getMessage());
             return Collections.emptyList();
         }
     }

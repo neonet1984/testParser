@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Инитиализация директорий">
+    <test name="Инитиализация директорий">
+        <classes>
+            <class name="utils.InitDirectory">
+                <methods>
+                    <include name="initDirBeforeTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

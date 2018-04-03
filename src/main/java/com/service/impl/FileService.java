@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Класс преднозначен для работы с файлами
@@ -31,7 +32,7 @@ public class FileService implements IFile {
 
     @Override
     public void clearDirectory(String pathDirectory) {
-        Arrays.stream(new File(pathDirectory).listFiles())
+        Arrays.stream(Objects.requireNonNull(new File(pathDirectory).listFiles()))
                 .forEach(pathToFile -> deleteFile(pathToFile));
     }
 

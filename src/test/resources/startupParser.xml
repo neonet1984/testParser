@@ -1,0 +1,11 @@
+<suite name="Запуск парсера">
+    <test name="Запуск парсера">
+        <classes>
+            <class name="utils.UtilsParser">
+                <methods>
+                    <include name="startupParser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
